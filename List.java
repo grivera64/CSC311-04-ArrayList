@@ -15,7 +15,7 @@ public interface List<E> {
     void add(int index, E element);     // Adds to specified index
     E remove(int index);                // Removes at specified index and returns the element
     E get(int index);                   // Gets from specified index without deleting
-    void set(E element, int index);     // Replaces the value at the specified index
+    void set(int index, E element);     // Replaces the value at the specified index
     int size();                         // Gets the number of elements in the array list
     int indexOf(E element);             // Returns the first index of an element in the list (-1 if not found)
 }

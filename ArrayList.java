@@ -88,8 +88,11 @@ public class ArrayList<E> implements List<E> {
     }
 
     @Override
-    public void set(E element, int index) {
-
+    public void set(int index, E element) {
+        if (index < 0 || this.size < index) {
+            throw new IllegalArgumentException("Invalid Index!");
+        }
+        this.arr[index] = element;
     }
 
     @Override
