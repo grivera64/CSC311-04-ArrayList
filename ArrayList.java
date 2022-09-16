@@ -66,12 +66,25 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public E remove(int index) {
-        return null;
+        if (index < 0 || this.size <= index) {
+            throw new IllegalArgumentException("Invalid Index!");
+        }
+
+        E tmp = arr[index];
+        for (int i = index; i < this.size; i++) {
+            this.arr[i] = this.arr[i + 1];
+        }
+
+        this.size--;
+        return tmp;
     }
 
     @Override
     public E get(int index) {
-        return null;
+        if (index < 0 || this.size < index) {
+            throw new IllegalArgumentException("Invalid Index!");
+        }
+        return this.arr[index];
     }
 
     @Override
@@ -81,7 +94,7 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public int size() {
-        return size;
+        return this.size;
     }
 
     @Override

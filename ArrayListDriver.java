@@ -18,5 +18,10 @@ public class ArrayListDriver {
         System.out.println(list);
         list.add(1, 100);
         System.out.println(list);
+        list.remove(1);
+        System.out.println(list);
+        Integer value = list.get(0);
+        System.out.printf("The value at location %d is: %d\n", 0, value);
+
     }
 }
