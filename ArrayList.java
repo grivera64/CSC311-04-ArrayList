@@ -15,6 +15,10 @@ public class ArrayList<E> implements List<E> {
 
     @SuppressWarnings("unchecked")
     public ArrayList(int capacity) {
+        if (capacity < 1) {
+            throw new IllegalArgumentException("Capacity cannot be less than 1");
+        }
+
         this.capacity = capacity;
         this.size = 0;
         this.arr = (E[]) new Object[capacity];       // Unchecked Cast Compiler Warning, but okay at runtime
