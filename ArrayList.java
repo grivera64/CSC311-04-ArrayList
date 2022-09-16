@@ -1,4 +1,4 @@
-package com.grivera64.datastructure.List;
+package com.grivera64.datastructure.list;
 
 public class ArrayList<E> implements List<E> {
 
