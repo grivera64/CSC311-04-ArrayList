@@ -102,7 +102,12 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public int indexOf(E element) {
-        return 0;
+        for (int index = 0; index < this.size; index++) {
+            if (this.arr[index].equals(element)) {
+                return index;
+            }
+        }
+        return -1;
     }
 
     @Override                       // Original prints out the address location of the object

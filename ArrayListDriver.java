@@ -28,5 +28,7 @@ public class ArrayListDriver {
         System.out.println(list);
         list.set(0, 99);
         System.out.println(list);
+
+        System.out.printf("The index of %d is %d\n", 8, list.indexOf(8));
     }
 }
