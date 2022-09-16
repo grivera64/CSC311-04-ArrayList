@@ -26,17 +26,31 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public void add(E element) {
-        if (this.capacity <= this.size) {
-            System.out.println("There isn't space, calling reallocate...");
-            this.reallocate();
-        }
-        arr[size] = element;
-        size++;
+        this.add(this.size, element);
     }
 
     @Override
     public void add(int index, E element) {
 
+        /* Checking params */
+        if (index < 0 || this.size < index) {
+            throw new IllegalArgumentException("Invalid index!");
+        }
+
+        /* Make space if we need more capacity to fit a new element */
+        if (this.capacity <= this.size) {
+            System.out.println("There isn't space, calling reallocate...");
+            this.reallocate();
+        }
+
+        /* Shift all indices after index to the right */
+        for (int i = this.size; i > index; i--) {
+            this.arr[i] = this.arr[i - 1];
+        }
+
+        /* Add the last element to the index provided */
+        arr[index] = element;
+        size++;
     }
 
     @SuppressWarnings("unchecked")

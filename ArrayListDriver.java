@@ -16,5 +16,7 @@ public class ArrayListDriver {
         System.out.println(list);
         list.add(50);
         System.out.println(list);
+        list.add(1, 100);
+        System.out.println(list);
     }
 }
