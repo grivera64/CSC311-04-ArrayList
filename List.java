@@ -6,6 +6,7 @@ package com.grivera64.datastructure.list;
  * Course: CSC 311-04
  * Creation Date: 9/16/2022
  * Due Date: 9/22/2022
+ * File Name: List.java
  * Description: Represents the "bare-bones" ADT interface for an ArrayList
  */
 

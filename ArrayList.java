@@ -1,5 +1,15 @@
 package com.grivera64.datastructure.list;
 
+/*
+ * Name: Giovanni Rivera
+ * Instructor: Dr. Chatterjee
+ * Course: CSC 311-04
+ * Creation Date: 9/16/2022
+ * Due Date: 9/22/2022
+ * File Name: ArrayList.java
+ * Description: Implements the ArrayList ADT methods from our "bare-bones" List interface
+ */
+
 public class ArrayList<E> implements List<E> {
 
     private static final int INITIAL_CAPACITY = 10; // Default capacity

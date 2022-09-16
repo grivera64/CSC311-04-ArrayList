@@ -1,5 +1,15 @@
 package com.grivera64.datastructure.list;
 
+/*
+ * Name: Giovanni Rivera
+ * Instructor: Dr. Chatterjee
+ * Course: CSC 311-04
+ * Creation Date: 9/16/2022
+ * Due Date: 9/22/2022
+ * File Name: ArrayListDriver.java
+ * Description: Tests our ArrayList implementation
+ */
+
 public class ArrayListDriver {
 
     public static void main(String[] args) {
