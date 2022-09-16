@@ -41,7 +41,6 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public void add(int index, E element) {
-
         /* Checking params */
         if (index < 0 || this.size < index) {
             throw new IllegalArgumentException("Invalid index!");
@@ -59,15 +58,15 @@ public class ArrayList<E> implements List<E> {
         }
 
         /* Add the last element to the index provided */
-        arr[index] = element;
-        size++;
+        this.arr[index] = element;
+        this.size++;
     }
 
     @SuppressWarnings("unchecked")
     private void reallocate() {
         /* Create a copy of the array that has twice the capacity */
         E[] newArr = (E[]) new Object[this.capacity * 2];
-        System.arraycopy(arr, 0, newArr, 0, this.capacity); // Similar to memcpy() in C
+        System.arraycopy(this.arr, 0, newArr, 0, this.capacity); // Similar to memcpy() in C
 
         /* Update array information to new array */
         this.capacity *= 2;
@@ -80,7 +79,7 @@ public class ArrayList<E> implements List<E> {
             throw new IllegalArgumentException("Invalid Index!");
         }
 
-        E tmp = arr[index];
+        E tmp = this.arr[index];
         for (int i = index; i < this.size; i++) {
             this.arr[i] = this.arr[i + 1];
         }
@@ -120,7 +119,8 @@ public class ArrayList<E> implements List<E> {
         return -1;
     }
 
-    @Override                       // Original prints out the address location of the object
+    // Original toString prints out the address location of the object
+    @Override
     public String toString() {
         StringBuilder s = new StringBuilder("{");
         for (int index = 0; index < this.size - 1; index++) {
@@ -128,7 +128,7 @@ public class ArrayList<E> implements List<E> {
             s.append(", ");
         }
 
-        s.append(this.arr[size - 1]);
+        s.append(this.arr[this.size - 1]);
         s.append('}');
         return s.toString();
     }
