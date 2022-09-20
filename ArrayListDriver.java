@@ -39,6 +39,7 @@ public class ArrayListDriver {
         list.set(0, 99);
         System.out.println(list);
 
+        System.out.printf("The index of %d is %d\n", 30, list.indexOf(30));
         System.out.printf("The index of %d is %d\n", 8, list.indexOf(8));
     }
 }

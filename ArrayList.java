@@ -25,6 +25,7 @@ public class ArrayList<E> implements List<E> {
 
     @SuppressWarnings("unchecked")
     public ArrayList(int capacity) {
+        /* Check for invalid capacities */
         if (capacity < 1) {
             throw new IllegalArgumentException("Capacity cannot be less than 1");
         }
@@ -41,7 +42,7 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public void add(int index, E element) {
-        /* Checking params */
+        /* Checking if the index is within bounds or would be appended to the end */
         if (index < 0 || this.size < index) {
             throw new IllegalArgumentException("Invalid index!");
         }
@@ -75,22 +76,25 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public E remove(int index) {
+        /* Checking if the index to remove is within bounds */
         if (index < 0 || this.size <= index) {
             throw new IllegalArgumentException("Invalid Index!");
         }
 
+        /* Remove element and shift rightmost elements to the left by one */
         E tmp = this.arr[index];
         for (int i = index; i < this.size; i++) {
             this.arr[i] = this.arr[i + 1];
         }
 
         this.size--;
-        return tmp;
+        return tmp;     // Return the removed element
     }
 
     @Override
     public E get(int index) {
-        if (index < 0 || this.size < index) {
+        /* Get the element at the provided index */
+        if (index < 0 || this.size <= index) {
             throw new IllegalArgumentException("Invalid Index!");
         }
         return this.arr[index];
@@ -98,7 +102,8 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public void set(int index, E element) {
-        if (index < 0 || this.size < index) {
+        /* Replace the element at index with new element */
+        if (index < 0 || this.size <= index) {
             throw new IllegalArgumentException("Invalid Index!");
         }
         this.arr[index] = element;
