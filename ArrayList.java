@@ -26,8 +26,8 @@ public class ArrayList<E> implements List<E> {
     @SuppressWarnings("unchecked")
     public ArrayList(int capacity) {
         /* Check for invalid capacities */
-        if (capacity < 1) {
-            throw new IllegalArgumentException("Capacity cannot be less than 1");
+        if (capacity < 0) {
+            throw new IllegalArgumentException("Capacity cannot be negative");
         }
 
         this.capacity = capacity;
@@ -116,12 +116,13 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public int indexOf(E element) {
+        /* Search for the element inside the list */
         for (int index = 0; index < this.size; index++) {
             if (this.arr[index].equals(element)) {
                 return index;
             }
         }
-        return -1;
+        return -1;  // The element isn't in the list
     }
 
     // Original toString prints out the address location of the object
