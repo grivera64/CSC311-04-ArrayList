@@ -127,6 +127,11 @@ public class ArrayList<E> implements List<E> {
     // Original toString prints out the address location of the object
     @Override
     public String toString() {
+        /* Print out an empty set if there are no elements */
+        if (size == 0) {
+            return "{}";
+        }
+
         StringBuilder s = new StringBuilder("{");
         for (int index = 0; index < this.size - 1; index++) {
             s.append(this.arr[index]);
