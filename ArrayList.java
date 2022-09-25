@@ -1,4 +1,4 @@
-package com.grivera64.datastructure.list;
+//package com.grivera64.datastructure.list;
 
 /*
  * Name: Giovanni Rivera
